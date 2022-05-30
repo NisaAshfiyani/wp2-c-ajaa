@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <h3>Form Ubah Data</h3>
+
+        NIM : <input id="nim" readonly><br>
+        NAMA : <input id="nama"><br>
+        KELAS : <input id="kelas"><br>
+        <button id="simpan">Simpan</button>
+<script>
+    $(document).ready(function() {
+        var param = window.location.search;
+        var urlParam = new URLSearchParams(param);
+        var nim = urlParam.get("nim");
+        console.log(nim);
+
+        var data = new Object();
+        data.nim = nim;
+
+        $.post('../backend/get-data-by-nim.php', 
+            JSON.stringify(data), 
+            function(resp) {
+                var dataDetail = JSON.parse(resp);
+                $("#nim").val(dataDetail.nim);
+                $("#nama").val(dataDetail.nama);
+                $("#kelas").val(dataDetail.kelas);
+            });
+    });
+
+    $(document).on('click', "#simpan", function() {
+        var mhs = new Object();
+        mhs.nim = $("#nim").val();
+        mhs.nama = $("#nama").val();
+        mhs.kelas = $("#kelas").val();
+        console.log(mhs);
+        $.post('../backend/update.php', 
+            JSON.stringify(mhs), 
+            function(resp) {
+                console.log(resp);
+                var obj = JSON.parse(resp);
+                if(obj.result == "success")  {
+                    alert("Perubahan data berhasil.");
+                    window.location.href = "index.html";
+                } else {
+                    alert('Perubahan data Gagal!!');
+                }
+            }
+        );
+    });
+</script>
+
+    </body>
+</html>
