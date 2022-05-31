@@ -9,7 +9,7 @@ $sql = "update surat_masuk set " .
        "  asal_surat='" . $data->asal_surat . "' " .
        "  isi='" . $data->isi . "'," .
        "  tgl_surat='" . $data->tgl_surat . "' " .
-       "  file='" . $data->file . "'," .
+       
        "  keterangan='" . $data->keterangan . "' " .
        "where no_surat='" . $data->no_surat . "'";
 $result = pg_query($sql);

@@ -31,10 +31,7 @@
                             <label for="tgl_surat">Tanggal</label>
                             <input type="date" name="tgl_surat" id="tgl_surat" class="form-control" placeholder="Masukkan Tanggal..." required>
                         </div>
-                        <div class="mb-3">
-                            <label for="formFile" class="form-label">File</label>
-                            <input class="form-control" type="file" id="formFile">
-                          </div>
+                        
                         <div class="form-group">
                             <label for="keterangan">Keterangan</label>
                             <input type="text" name="keterangan" id="keterangan" class="form-control" placeholder="Masukkan Keterangan..." required>
@@ -66,7 +63,7 @@
                 $("#asal_surat").val(dataDetail.asal_surat);
                 $("#isi").val(dataDetail.isi);
                 $("#tgl_surat").val(dataDetail.tgl_surat);
-                $("#file").val(dataDetail.file);
+              
                 $("#keterangan").val(dataDetail.keterangan);
             });
     });
@@ -78,7 +75,7 @@
         msk.asal_surat = $("#asal_surat").val();
         msk.isi = $("#isi").val();
         msk.tgl_surat = $("#tgl_surat").val();
-        msk.file = $("#file").val();
+        
         msk.keterangan = $("#keterangan").val();
         console.log(msk);
         $.post('../backend/update.php', 
