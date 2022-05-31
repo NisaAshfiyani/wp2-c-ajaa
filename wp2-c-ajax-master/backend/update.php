@@ -4,10 +4,14 @@ require_once '../koneksi.php';
 $rawData = file_get_contents('php://input');
 $data = json_decode($rawData);
 
-$sql = "update mahasiswa set " .
-       "  nama='" . $data->nama . "'," .
-       "  kelas='" . $data->kelas . "' " .
-       "where nim='" . $data->nim . "'";
+$sql = "update surat_masuk set " .
+       "  nama_pengirim='" . $data->nama_pengirim . "'," .
+       "  asal_surat='" . $data->asal_surat . "' " .
+       "  isi='" . $data->isi . "'," .
+       "  tgl_surat='" . $data->tgl_surat . "' " .
+       "  file='" . $data->file . "'," .
+       "  keterangan='" . $data->keterangan . "' " .
+       "where no_surat='" . $data->no_surat . "'";
 $result = pg_query($sql);
 $row = pg_affected_rows($result);
 $obj = new stdClass();

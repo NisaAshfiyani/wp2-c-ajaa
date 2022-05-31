@@ -4,10 +4,10 @@ require_once '../koneksi.php';
 $raw = file_get_contents('php://input');
 $data = json_decode($raw);
 
-// echo $data->nim;
+// echo $data->no_surat;
 
-$sql = "insert into mahasiswa(nim, nama, kelas) values('" .
-    $data->nim . "','" . $data->nama . "','" . $data->kelas . "')";
+$sql = "insert into surat_masuk(no_surat, nama_pengirim, asal_surat, isi, tgl_surat, file, keterangan) values
+('" .$data->no_surat . "','" . $data->nama_pengirim . "','" . $data->asal_surat . "','" . $data->isi . "','" . $data->tgl_surat . "','" . $data->file . "','" . $data->keterangan . "')";
 $result = pg_query($sql);
 $row = pg_affected_rows($result);
 $obj = new stdClass();

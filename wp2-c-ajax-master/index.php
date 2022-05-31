@@ -4,4 +4,4 @@
 
 header("location: frontend/index.html", true, 301);
 
-exit();
+exit();  

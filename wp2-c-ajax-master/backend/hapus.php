@@ -4,9 +4,9 @@ require_once '../koneksi.php';
 $raw = file_get_contents('php://input');
 $data = json_decode($raw);
 
-// echo json_encode($data->nim);
+// echo json_encode($data->no_surat);
 
-$sql = "delete from mahasiswa where nim='" . $data->nim . "'";
+$sql = "delete from surat_masuk where no_surat='" . $data->no_surat . "'";
 $result = pg_query($sql);
 $row = pg_affected_rows($result);
 
