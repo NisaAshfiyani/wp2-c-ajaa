@@ -72,17 +72,17 @@
     });
 
     $(document).on('click', "#simpan", function() {
-        var surat = new Object();
-        surat.no_surat = $("#no_surat").val();
-        surat.nama_pengirim = $("#nama_pengirim").val();
-        surat.asal_surat = $("#asal_surat").val();
-        surat.isi = $("#isi").val();
-        surat.tgl_surat = $("#tgl_surat").val();
-        surat.file = $("#file").val();
-        surat.keterangan = $("#keterangan").val();
-        console.log(surat);
+        var msk = new Object();
+        msk.no_surat = $("#no_surat").val();
+        msk.nama_pengirim = $("#nama_pengirim").val();
+        msk.asal_surat = $("#asal_surat").val();
+        msk.isi = $("#isi").val();
+        msk.tgl_surat = $("#tgl_surat").val();
+        msk.file = $("#file").val();
+        msk.keterangan = $("#keterangan").val();
+        console.log(msk);
         $.post('../backend/update.php', 
-            JSON.stringify(surat), 
+            JSON.stringify(msk), 
             function(resp) {
                 console.log(resp);
                 var obj = JSON.parse(resp);
