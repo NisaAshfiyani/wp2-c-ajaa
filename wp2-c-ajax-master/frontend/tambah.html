@@ -14,6 +14,10 @@
                     <h1 class="text-center mt-5" style="color:  rgb(163, 90, 90);">Formulir Tambah Data </h1>
                         <div class="card-body">
                             <div class="form-group">
+                                <label for="no_surat">No.</label>
+                                <input type="number" name="no_urut" id="no_urut" class="form-control" placeholder="Masukkan No..." required>
+                            </div>
+                            <div class="form-group">
                                 <label for="no_surat">No. Surat</label>
                                 <input type="number" name="no_surat" id="no_surat" class="form-control" placeholder="Masukkan No Surat..." required>
                             </div>
@@ -33,6 +37,10 @@
                                 <label for="tgl_surat">Tanggal</label>
                                 <input type="date" name="tgl_surat" id="tgl_surat" class="form-control" placeholder="Masukkan Tanggal..." required>
                             </div>
+                            <div class="mb-3">
+                                <label for="formFile" class="form-label">Default file input</label>
+                                <input class="form-control" type="file" id="formFile">
+                              </div>
                             <div class="form-group">
                                 <label for="keterangan">Keterangan</label>
                                 <input type="text" name="keterangan" id="keterangan" class="form-control" placeholder="Masukkan Keterangan..." required>
@@ -51,11 +59,13 @@
 <script>
     $(document).on('click', "#simpan", function() {
         var msk = new Object();
+        msk.no_urut= $("#no_urut").val();
         msk.no_surat = $("#no_surat").val();
         msk.nama_pengirim = $("#nama_pengirim").val();
         msk.asal_surat = $("#asal_surat").val();
         msk.isi = $("#isi").val();
         msk.tgl_surat = $("#tgl_surat").val();
+        msk.file = $("#file").val();
         
         msk.keterangan = $("#keterangan").val();
 

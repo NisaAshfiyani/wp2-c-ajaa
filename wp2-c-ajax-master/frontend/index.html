@@ -23,7 +23,7 @@
                     <th>Asal Surat</th>
                     <th>Isi</th>
                     <th>Tanggal</th>
-                    
+                    <th>File</th>
                     <th>Keterangan</th>
                 </tr>
             </thead>
@@ -55,7 +55,7 @@
                         "<td>" + result[i].asal_surat + "</td>" +
                         "<td>" + result[i].isi + "</td>" +
                         "<td>" + result[i].tgl_surat + "</td>" +
-                        
+                        "<td>" + result[i].file + "</td>" +
                         "<td>" + result[i].keterangan + "</td>" +
                         '<td><button id="hapus" no_surat="' + result[i].no_surat + '">Hapus</button></td>' +
                         '<td><button id="edit" no_surat="' + result[i].no_surat + '">Ubah</button></td>' +
@@ -67,10 +67,10 @@
     });
 
     $(document).on('click', "#hapus", function() {
-        var no_surat = $(this).attr("no_surat");
-        console.log(no_surat);
+        var no_urut = $(this).attr("no_urut");
+        console.log(no_urut);
         var param = new Object();
-        param.no_surat = no_surat;
+        param.no_urut = no_urut;
         $.post("../backend/hapus.php", JSON.stringify(param), 
           function(resp) {
             var obj = JSON.parse(resp);
@@ -84,8 +84,8 @@
     });
 
     $(document).on('click', '#edit', function() {
-        var no_surat = $(this).attr('no_surat');
-        window.location.href = "./ubah.html?no_surat=" + no_surat;
+        var no_urut = $(this).attr('no_urut');
+        window.location.href = "./ubah.html?no_urut=" + no_urut;
     });
 </script>        
     </body>
