@@ -20,10 +20,8 @@
                     <th>No.</th>
                     <th>No. Surat</th>
                     <th>Nama Pengirim</th>
-                    <th>Asal Surat</th>
                     <th>Isi</th>
                     <th>Tanggal</th>
-                    <th>File</th>
                     <th>Keterangan</th>
                 </tr>
             </thead>
@@ -52,13 +50,13 @@
                         "<td>" + result[i].no_urut + "</td>" +
                         "<td>" + result[i].no_surat + "</td>" +
                         "<td>" + result[i].nama_pengirim + "</td>" +
-                        "<td>" + result[i].asal_surat + "</td>" +
+                       
                         "<td>" + result[i].isi + "</td>" +
                         "<td>" + result[i].tgl_surat + "</td>" +
-                        "<td>" + result[i].file + "</td>" +
+                       
                         "<td>" + result[i].keterangan + "</td>" +
-                        '<td><button id="hapus" no_surat="' + result[i].no_surat + '">Hapus</button></td>' +
-                        '<td><button id="edit" no_surat="' + result[i].no_surat + '">Ubah</button></td>' +
+                        '<td><button id="hapus" no_urut="' + result[i].no_urut + '">Hapus</button></td>' +
+                        '<td><button id="edit" no_urut="' + result[i].no_urut + '">Ubah</button></td>' +
                         "</tr>";
                 }
                 $("#isi").html(resultTag);
