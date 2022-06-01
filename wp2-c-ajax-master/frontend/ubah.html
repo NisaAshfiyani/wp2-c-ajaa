@@ -25,8 +25,8 @@
                         </div>
                        
                         <div class="form-group">
-                            <label for="isi_surat">Isi</label>
-                            <input type="text" name="isi_surat" id="isi_surat" class="form-control" placeholder="Masukkan Isi..." required>
+                            <label for="isi">Isi</label>
+                            <input type="text" name="isi" id="isi" class="form-control" placeholder="Masukkan Isi..." required>
                         </div>
                         <div class="form-group">
                             <label for="tgl_surat">Tanggal</label>
@@ -62,10 +62,8 @@
                 $("#no_urut").val(dataDetail.no_urut);
                 $("#no_surat").val(dataDetail.no_surat);
                 $("#nama_pengirim").val(dataDetail.nama_pengirim);
-              
                 $("#isi").val(dataDetail.isi);
                 $("#tgl_surat").val(dataDetail.tgl_surat);
-              
                 $("#keterangan").val(dataDetail.keterangan);
             });
     });
@@ -75,7 +73,6 @@
         msk.no_urut = $("#no_urut").val();
         msk.no_surat = $("#no_surat").val();
         msk.nama_pengirim = $("#nama_pengirim").val();
-      
         msk.isi = $("#isi").val();
         msk.tgl_surat = $("#tgl_surat").val();
         msk.keterangan = $("#keterangan").val();
